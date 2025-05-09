@@ -1,0 +1,431 @@
+.top-nav {
+    height: 60px;
+    background-color: #6891bb;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.7); /* 使用半透明黑色，降低亮度 */
+    margin: 0;
+    padding: 60px 0 0;
+    height: calc(100vh - 60px);
+    min-width: 1300px;
+    overflow: hidden;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #6891bb;
+    color: white;
+    width: 120px;
+}
+
+.search-bar::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.brightness-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    size: 1;
+}
+
+/* 暗色模式适配 */
+body.dark-mode .search-bar {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode .search-bar::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+
+
+#app {
+    height: 100%; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+
+.article-list {
+    width: 150px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-y: auto;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.article-content {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.article-content > div {
+    width: 100%;
+    max-width: 800px;
+}
+
+.outline {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-y: auto;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+
+
+/* 自定义代码框的样式 */
+* {
+    box-sizing: border-box;
+}
+
+.article-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.article-list li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.article-list li:hover {
+    text-decoration: underline;
+}
+
+.outline ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.outline li {
+    margin: 5px 0;
+    padding-left: 10px;
+}
+
+/* 暗色模式样式 */
+body.dark-mode {
+    background-color: #4c4848;
+    color: #7e6e6e;
+}
+
+body.dark-mode .top-nav {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .article-list,
+body.dark-mode .outline {
+    background-color: #2d2d2d;
+    color: #7e6e6e;
+}
+
+body.dark-mode .article-content {
+    background-color: #1a1a1a;
+    background-color: #2d2d2d;
+    color: #7e6e6e;
+}
+
+body.dark-mode .article-list li,
+body.dark-mode .outline li {
+    
+    color: #7e6e6e;
+}
+
+body.dark-mode .article-list li:hover,
+body.dark-mode .outline li:hover {
+    
+    color: #7e6e6e;
+}
+
+
+/* 自定义代码块样式 */
+/* 带行号的代码块样式 */
+.custom-code-block {
+    max-width: 100%;
+    margin: 20px 0;
+    background: #23272e;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow-x: auto;
+    position: relative;
+    padding: 0;
+    /* 代码内容紧贴顶部和左侧 */
+}
+.custom-code-block .code-block-body {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.custom-code-block .code-linenumbers {
+    text-align: right;
+    user-select: none;
+    color: #666;
+    background: transparent;
+    padding: 8px 0 8px 8px;
+    font-size: 13px;
+    min-width: 32px;
+    margin-top: 0;
+}
+.custom-code-block .code-linenumber {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 4px;
+}
+.custom-code-block pre.hljs {
+    margin: 0;
+    background: none;
+    padding: 8px 0 8px 0;
+    border-radius: 8px 8px 0 0;
+    overflow-x: auto;
+    font-size: 14px;
+    min-width: 0;
+}
+.custom-code-block .code-line {
+    display: block;
+    min-height: 20px;
+    line-height: 20px;
+    padding: 0 8px;
+    white-space: pre;
+}
+.code-toolbar {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 8px;
+    background: transparent;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+    margin-top: 4px;
+}
+.code-toolbar-btns {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+.custom-code-block:hover .code-toolbar-btns {
+    opacity: 1;
+    pointer-events: auto;
+}
+.code-toolbar-btns .code-brightness-btn,
+.code-toolbar-btns .code-copy-btn,
+.code-toolbar-btns .code-fullscreen-btn {
+    background: #353b45;
+    border: none;
+    color: #b3b3b3;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+.code-toolbar-btns .code-brightness-btn:hover,
+.code-toolbar-btns .code-copy-btn:hover,
+.code-toolbar-btns .code-fullscreen-btn:hover {
+    background: #4f566b;
+    color: #fff;
+}
+.code-lang {
+    margin-right: auto;
+    font-size: 13px;
+    color: #b3b3b3;
+    padding-left: 0;
+    font-family: monospace;
+}
+/* 明亮主题样式 */
+.custom-code-block.light-theme {
+    background: #f7f7f7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.custom-code-block.light-theme .code-linenumbers {
+    color: #bdbdbd;
+}
+.custom-code-block.light-theme pre.hljs {
+    background: none;
+    color: #222;
+}
+.custom-code-block.light-theme .code-line {
+    color: #222;
+}
+.custom-code-block.light-theme .code-toolbar-btns .code-brightness-btn,
+.custom-code-block.light-theme .code-toolbar-btns .code-copy-btn,
+.custom-code-block.light-theme .code-toolbar-btns .code-fullscreen-btn {
+    background: #e0e0e0;
+    color: #666;
+}
+.custom-code-block.light-theme .code-toolbar-btns .code-brightness-btn:hover,
+.custom-code-block.light-theme .code-toolbar-btns .code-copy-btn:hover,
+.custom-code-block.light-theme .code-toolbar-btns .code-fullscreen-btn:hover {
+    background: #cfcfcf;
+    color: #222;
+}
+.custom-code-block.light-theme .code-lang {
+    color: #666;
+}
+/* 默认隐藏按钮组 */
+.code-toolbar-btns {
+    pointer-events: none;
+}
+.custom-code-block:hover .code-toolbar-btns {
+    pointer-events: auto;
+}
+/* 语言标签靠左 */
+.code-lang {
+    margin-right: auto;
+    color: #b3b3b3;
+    font-size: 13px;
+    font-family: monospace;
+    padding-left: 8px;
+    position: relative;
+    z-index: 1;
+}
+.custom-code-block .code-linenumbers {
+    user-select: none;
+    background: #23272e;
+    color: #888;
+    text-align: right;
+    padding: 16px 8px 16px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    min-width: 36px;
+    border-right: 1px solid #333;
+}
+.custom-code-block .code-linenumber {
+    display: block;
+    height: 1.6em;
+}
+.custom-code-block pre {
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+    background: transparent;
+    white-space: pre-wrap;
+    word-break: break-all;
+    flex: 1;
+    min-width: 0;
+}
+.custom-code-block code {
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'monospace';
+    font-size: 14px;
+    background: none;
+    color: #e6e6e6;
+    display: block;
+}
+.custom-code-block .code-line {
+    display: block;
+    min-height: 1.6em;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.custom-code-block .code-toolbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #23272e;
+    border-radius: 8px 8px 0 0;
+    padding: 0 8px;
+    z-index: 2;
+    gap: 8px;
+}
+.code-copy-btn, .code-fullscreen-btn {
+    background: #353b45;
+    border: none;
+    color: #b3b3b3;
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 4px;
+    transition: background 0.2s;
+}
+.code-copy-btn:hover, .code-fullscreen-btn:hover {
+    background: #4f566b;
+    color: #fff;
+}
+.custom-code-block::-webkit-scrollbar {
+    height: 8px;
+}
+.custom-code-block::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+.custom-code-block::-webkit-scrollbar-track {
+    background: #23272e;
+}
+/* 暗色模式下自定义代码块 */
+body.dark-mode .custom-code-block {
+    background: #181c20;
+}
+body.dark-mode .code-toolbar {
+    background: #181c20;
+}
+body.dark-mode .code-copy-btn, body.dark-mode .code-fullscreen-btn {
+    background: #23272e;
+    color: #b3b3b3;
+}
+body.dark-mode .code-copy-btn:hover, body.dark-mode .code-fullscreen-btn:hover {
+    background: #4f566b;
+    color: #fff;
+}
+
+
+  

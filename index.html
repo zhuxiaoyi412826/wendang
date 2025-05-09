@@ -1,0 +1,28 @@
+<!-- ... existing code ... -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown文档阅读网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <h1>javaweb系列</h1>
+            <div class="search-container">
+               
+                <button class="brightness-toggle" @click="toggleDarkMode" title="亮度调节">☀️</button>
+                <input type="text" class="search-bar" placeholder="搜索文档...">
+            </div>
+          
+        </div>
+    </nav>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+    <script src="dmk.js"></script>
+</body>
+</html>
