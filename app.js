@@ -53,36 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('未找到亮度调节按钮');
     }
-    // 代码块复制和全屏功能
-    document.body.addEventListener('click', function(e) {
-        if (e.target.classList.contains('code-copy-btn')) {
-            const codeId = e.target.getAttribute('data-target');
-            const codeElem = document.getElementById(codeId);
-            if (codeElem) {
-                const text = codeElem.innerText;
-                navigator.clipboard.writeText(text).then(() => {
-                    e.target.innerText = '已复制';
-                    setTimeout(() => { e.target.innerText = '复制'; }, 1200);
-                });
-            }
-        } else if (e.target.classList.contains('code-fullscreen-btn')) {
-            const codeId = e.target.getAttribute('data-target');
-            const codeElem = document.getElementById(codeId);
-            if (codeElem) {
-                const pre = codeElem.closest('pre');
-                if (pre.requestFullscreen) {
-                    pre.requestFullscreen();
-                } else if (pre.webkitRequestFullscreen) {
-                    pre.webkitRequestFullscreen();
-                } else if (pre.mozRequestFullScreen) {
-                    pre.mozRequestFullScreen();
-                } else if (pre.msRequestFullscreen) {
-                    pre.msRequestFullscreen();
-                }
-            }
-        }
-        
-    });
+  
 });
 
 

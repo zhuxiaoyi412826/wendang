@@ -1,63 +1,70 @@
+/* 顶部导航栏样式 */
 .top-nav {
-    height: 60px;
-    background-color: #6891bb;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
+    height: 60px; /* 设置导航栏高度 */
+    background-color: #6891bb; /* 设置导航栏背景色 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加阴影效果 */
+    position: fixed; /* 固定在页面顶部 */
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1000; /* 保证导航栏在最上层 */
 }
 
+/* 页面主体样式 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* 设置字体 */
     color: rgba(0, 0, 0, 0.7); /* 使用半透明黑色，降低亮度 */
-    margin: 0;
-    padding: 60px 0 0;
-    height: calc(100vh - 60px);
-    min-width: 1300px;
-    overflow: hidden;
+    margin: 0; /* 去除默认外边距 */
+    padding: 60px 0 0; /* 顶部留出导航栏高度 */
+    height: calc(100vh - 60px); /* 计算内容高度 */
+    min-width: 1300px; /* 设置最小宽度，防止布局错乱 */
+    overflow: hidden; /* 隐藏滚动条 */
 }
 
+/* 导航栏内容区域样式 */
 .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
     height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px; /* 最大宽度 */
+    margin: 0 auto; /* 居中 */
+    padding: 0 20px; /* 左右内边距 */
 }
 
+/* 搜索框容器样式 */
 .search-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px; /* 元素间距 */
 }
 
+/* 搜索输入框样式 */
 .search-bar {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #6891bb;
-    color: white;
-    width: 120px;
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    padding: 5px 10px; /* 内边距 */
+    background-color: #6891bb; /* 背景色 */
+    color: white; /* 字体颜色 */
+    width: 120px; /* 宽度 */
 }
 
+/* 搜索框占位符样式 */
 .search-bar::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.7); /* 占位符颜色 */
 }
 
+/* 亮度切换按钮样式 */
 .brightness-toggle {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+    background: none; /* 无背景 */
+    border: none; /* 无边框 */
+    font-size: 20px; /* 字体大小 */
+    cursor: pointer; /* 鼠标指针 */
     padding: 5px 10px;
     size: 1;
 }
 
-/* 暗色模式适配 */
+/* 暗色模式下搜索框样式 */
 body.dark-mode .search-bar {
     background-color: #2d2d2d;
     border-color: #444;
@@ -67,47 +74,51 @@ body.dark-mode .search-bar::placeholder {
     color: rgba(255,255,255,0.5);
 }
 
-
-
+/* 应用主容器样式 */
 #app {
     height: 100%; 
 }
 
+/* 页面主布局容器 */
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* 横向排列 */
     height: 100vh;
     width: 100%;
 }
 
+/* 文章列表区域样式 */
 .article-list {
-    width: 150px;
-    background-color: #f4f4f4;
-    padding: 10px;
-    overflow-y: auto;
-    flex-shrink: 0;
+    width: 150px; /* 固定宽度 */
+    background-color: #f4f4f4; /* 背景色 */
+    padding: 10px; /* 内边距 */
+    overflow-y: auto; /* 垂直滚动 */
+    flex-shrink: 0; /* 不缩小 */
     height: 100%;
 }
 
+/* 文章内容区域样式 */
 .article-content {
-    flex: 1;
+    flex: 1; /* 占据剩余空间 */
     min-width: 0;
     overflow-y: auto;
-    padding: 20px;
+    padding: 0px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* 轻微阴影 */
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
+/* 文章内容内部div样式 */
 .article-content > div {
     width: 100%;
-    max-width: 800px;
+    max-width: 800px; /* 最大宽度 */
 }
 
+/* 文章大纲区域样式 */
 .outline {
-    width: 250px;
+    width: 250px; /* 固定宽度 */
     background-color: #f4f4f4;
     padding: 10px;
     overflow-y: auto;
@@ -115,38 +126,41 @@ body.dark-mode .search-bar::placeholder {
     height: 100%;
 }
 
-
-
-/* 自定义代码框的样式 */
+/* 全局盒模型设置 */
 * {
     box-sizing: border-box;
 }
 
+/* 文章列表ul样式 */
 .article-list ul {
-    list-style-type: none;
+    list-style-type: none; /* 去除列表符号 */
     padding: 0;
 }
 
+/* 文章列表li样式 */
 .article-list li {
     margin: 5px 0;
-    cursor: pointer;
+    cursor: pointer; /* 鼠标指针 */
 }
 
+/* 文章列表li悬停样式 */
 .article-list li:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* 下划线 */
 }
 
+/* 大纲ul样式 */
 .outline ul {
     list-style-type: none;
     padding: 0;
 }
 
+/* 大纲li样式 */
 .outline li {
     margin: 5px 0;
     padding-left: 10px;
 }
 
-/* 暗色模式样式 */
+/* 暗色模式下整体样式 */
 body.dark-mode {
     background-color: #4c4848;
     color: #7e6e6e;
@@ -171,19 +185,15 @@ body.dark-mode .article-content {
 
 body.dark-mode .article-list li,
 body.dark-mode .outline li {
-    
     color: #7e6e6e;
 }
 
 body.dark-mode .article-list li:hover,
 body.dark-mode .outline li:hover {
-    
     color: #7e6e6e;
 }
 
-
-/* 自定义代码块样式 */
-/* 带行号的代码块样式 */
+/* 自定义代码块样式（带行号） */
 .custom-code-block {
     max-width: 100%;
     margin: 20px 0;
@@ -195,6 +205,7 @@ body.dark-mode .outline li:hover {
     padding: 0;
     /* 代码内容紧贴顶部和左侧 */
 }
+/* 代码块外层容器，包含代码和行号 */
 .custom-code-block .code-block-body {
     display: flex;
     align-items: flex-start;
@@ -202,6 +213,7 @@ body.dark-mode .outline li:hover {
     padding: 0;
     margin: 0;
 }
+/* 行号区域样式（浅色主题） */
 .custom-code-block .code-linenumbers {
     text-align: right;
     user-select: none;
@@ -212,12 +224,14 @@ body.dark-mode .outline li:hover {
     min-width: 32px;
     margin-top: 0;
 }
+/* 单行行号样式（浅色主题） */
 .custom-code-block .code-linenumber {
     display: block;
     height: 20px;
     line-height: 20px;
     padding: 0 4px;
 }
+/* 代码高亮区域样式（浅色主题） */
 .custom-code-block pre.hljs {
     margin: 0;
     background: none;
@@ -227,6 +241,7 @@ body.dark-mode .outline li:hover {
     font-size: 14px;
     min-width: 0;
 }
+/* 单行代码样式（浅色主题） */
 .custom-code-block .code-line {
     display: block;
     min-height: 20px;
@@ -234,6 +249,7 @@ body.dark-mode .outline li:hover {
     padding: 0 8px;
     white-space: pre;
 }
+/* 代码工具栏容器（按钮组） */
 .code-toolbar {
     display: flex;
     align-items: center;
@@ -244,6 +260,7 @@ body.dark-mode .outline li:hover {
     position: relative;
     margin-top: 4px;
 }
+/* 工具栏按钮组，默认隐藏 */
 .code-toolbar-btns {
     display: flex;
     gap: 8px;
@@ -255,10 +272,12 @@ body.dark-mode .outline li:hover {
     transition: opacity 0.2s;
     pointer-events: none;
 }
+/* 鼠标悬停时显示按钮组 */
 .custom-code-block:hover .code-toolbar-btns {
     opacity: 1;
     pointer-events: auto;
 }
+/* 工具栏按钮基础样式（暗色主题） */
 .code-toolbar-btns .code-brightness-btn,
 .code-toolbar-btns .code-copy-btn,
 .code-toolbar-btns .code-fullscreen-btn {
@@ -273,12 +292,14 @@ body.dark-mode .outline li:hover {
     transition: background 0.2s, color 0.2s;
     display: inline-block;
 }
+/* 工具栏按钮悬停高亮（暗色主题） */
 .code-toolbar-btns .code-brightness-btn:hover,
 .code-toolbar-btns .code-copy-btn:hover,
 .code-toolbar-btns .code-fullscreen-btn:hover {
     background: #4f566b;
     color: #fff;
 }
+/* 代码语言标签样式 */
 .code-lang {
     margin-right: auto;
     font-size: 13px;
@@ -286,44 +307,51 @@ body.dark-mode .outline li:hover {
     padding-left: 0;
     font-family: monospace;
 }
-/* 明亮主题样式 */
+/* 明亮主题下代码块整体样式 */
 .custom-code-block.light-theme {
     background: #f7f7f7;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
+/* 明亮主题下行号颜色 */
 .custom-code-block.light-theme .code-linenumbers {
     color: #bdbdbd;
 }
+/* 明亮主题下代码高亮区域 */
 .custom-code-block.light-theme pre.hljs {
     background: none;
     color: #222;
 }
+/* 明亮主题下单行代码颜色 */
 .custom-code-block.light-theme .code-line {
     color: #222;
 }
+/* 明亮主题下工具栏按钮样式 */
 .custom-code-block.light-theme .code-toolbar-btns .code-brightness-btn,
 .custom-code-block.light-theme .code-toolbar-btns .code-copy-btn,
 .custom-code-block.light-theme .code-toolbar-btns .code-fullscreen-btn {
     background: #e0e0e0;
     color: #666;
 }
+/* 明亮主题下工具栏按钮悬停样式 */
 .custom-code-block.light-theme .code-toolbar-btns .code-brightness-btn:hover,
 .custom-code-block.light-theme .code-toolbar-btns .code-copy-btn:hover,
 .custom-code-block.light-theme .code-toolbar-btns .code-fullscreen-btn:hover {
     background: #cfcfcf;
     color: #222;
 }
+/* 明亮主题下语言标签颜色 */
 .custom-code-block.light-theme .code-lang {
     color: #666;
 }
-/* 默认隐藏按钮组 */
+/* 默认隐藏按钮组（冗余，确保隐藏） */
 .code-toolbar-btns {
     pointer-events: none;
 }
+/* 鼠标悬停时按钮组可点击 */
 .custom-code-block:hover .code-toolbar-btns {
     pointer-events: auto;
 }
-/* 语言标签靠左 */
+/* 语言标签靠左显示 */
 .code-lang {
     margin-right: auto;
     color: #b3b3b3;
@@ -333,10 +361,11 @@ body.dark-mode .outline li:hover {
     position: relative;
     z-index: 1;
 }
+/* 行号区域（暗色主题） */
 .custom-code-block .code-linenumbers {
     user-select: none;
     background: #23272e;
-    color: #888;
+    color: #201f1f;
     text-align: right;
     padding: 16px 8px 16px 0;
     font-size: 14px;
@@ -344,10 +373,12 @@ body.dark-mode .outline li:hover {
     min-width: 36px;
     border-right: 1px solid #333;
 }
+/* 单行行号（暗色主题） */
 .custom-code-block .code-linenumber {
     display: block;
     height: 1.6em;
 }
+/* 代码块内容区域（暗色主题） */
 .custom-code-block pre {
     margin: 0;
     padding: 16px;
@@ -358,6 +389,7 @@ body.dark-mode .outline li:hover {
     flex: 1;
     min-width: 0;
 }
+/* 代码字体与颜色（暗色主题） */
 .custom-code-block code {
     font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'monospace';
     font-size: 14px;
@@ -365,12 +397,14 @@ body.dark-mode .outline li:hover {
     color: #e6e6e6;
     display: block;
 }
+/* 单行代码（暗色主题） */
 .custom-code-block .code-line {
     display: block;
     min-height: 1.6em;
     white-space: pre-wrap;
     word-break: break-all;
 }
+/* 工具栏容器（暗色主题，绝对定位） */
 .custom-code-block .code-toolbar {
     position: absolute;
     top: 0;
@@ -386,6 +420,7 @@ body.dark-mode .outline li:hover {
     z-index: 2;
     gap: 8px;
 }
+/* 复制/全屏按钮样式（暗色主题） */
 .code-copy-btn, .code-fullscreen-btn {
     background: #353b45;
     border: none;
@@ -397,10 +432,12 @@ body.dark-mode .outline li:hover {
     margin-left: 4px;
     transition: background 0.2s;
 }
+/* 复制/全屏按钮悬停高亮 */
 .code-copy-btn:hover, .code-fullscreen-btn:hover {
     background: #4f566b;
     color: #fff;
 }
+/* 代码块滚动条样式 */
 .custom-code-block::-webkit-scrollbar {
     height: 8px;
 }
@@ -411,13 +448,15 @@ body.dark-mode .outline li:hover {
 .custom-code-block::-webkit-scrollbar-track {
     background: #23272e;
 }
-/* 暗色模式下自定义代码块 */
+/* 暗色模式下自定义代码块背景色 */
 body.dark-mode .custom-code-block {
     background: #181c20;
 }
+/* 暗色模式下工具栏背景色 */
 body.dark-mode .code-toolbar {
     background: #181c20;
 }
+/* 暗色模式下按钮样式 */
 body.dark-mode .code-copy-btn, body.dark-mode .code-fullscreen-btn {
     background: #23272e;
     color: #b3b3b3;
